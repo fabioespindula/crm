@@ -1,0 +1,36 @@
+<p>
+  <%= f.label :name %><br />
+  <%= f.text_field :name %>
+</p>
+<p>
+  <%= f.label :code %><br />
+  <%= f.text_field :code %>
+</p>
+<p>
+  <%= f.label :desc %><br />
+  <%= f.text_area :desc %>
+</p>
+<p>
+  <%= f.label :status %><br />
+  <%= f.select :status, ["Select...","prospecting","accepted","canceled"] %>
+</p>
+<p>
+  <%= f.label :started_at %><br />
+  <%= f.date_select :started_at, :order => [:day, :month, :year] %>
+</p>
+<p>
+  <%= f.label :ended_at %><br />
+  <%= f.date_select :ended_at, :order => [:day, :month, :year], :include_blank => true %>
+</p>
+<p>
+  <%= f.label :value %><br />
+  <%= f.text_field :value %>
+</p>
+<p>
+  <%= f.label :leader_id %><br />
+  <%= f.select :leader_id, @leaders, :prompt => "Select..." %>
+</p>
+<p>
+  <%= f.label :project_id %><br />
+  <%= f.select :project_id, @projects, :prompt => "Select..." %>
+</p>

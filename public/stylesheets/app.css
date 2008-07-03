@@ -1,0 +1,86 @@
+h1, ul, li, body, h2 {
+    margin: 0;
+    padding: 0;
+}
+#header {
+    width: 99%;
+    padding: 25px 0px 25px 15px;
+    background-color: #006600;
+    color: #FFF;
+    font-size: 35px;
+    float: left;
+}
+#menu {
+    width: 99%;
+    list-style: none;
+    display: inline;
+    float: left;
+    clear: both;
+    padding: 0px 0px 0px 15px;
+}
+#menu li {
+    display: block;
+    text-decoration: none;
+    margin-top: 5px;
+    color: #006600;
+    background-color: #FFF;
+    float: left;
+    padding: 5px;
+}
+#menu li a {
+    display: block;
+    color: #FFF;
+    float: left;
+    background-color: #006600;
+    text-decoration: none;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 0px;
+    padding-bottom: 3px;
+}
+#menu li a:hover {
+    color: #FFF;
+    text-decoration: none;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-top: 0px;
+    padding-bottom: 3px;
+}
+#content {
+    padding: 20px;
+    float: left;
+}
+.welcome {
+    color: #006600;
+}
+#content h1 {
+    color: #006600;
+    margin-bottom: 8px;
+}
+#content ul {
+    margin-left: 15px;
+}
+#content a {
+    color: #006600;
+}
+#content a:hover {
+    color: #FFF;
+    background-color: #006600;
+}
+#content p b {
+    color: #006600;
+}
+td {
+    background-color: #BCE1C3;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+th {
+    background-color: #90E17F;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

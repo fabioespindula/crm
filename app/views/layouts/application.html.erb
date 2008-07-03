@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>CRM - Customer Relationship Management</title>
+    <%= stylesheet_link_tag 'scaffold' %>
+    <%= stylesheet_link_tag 'app' %>
+</head>
+<body>
+    <h1 id="header">CRM</h1>
+    <ul id="menu">
+        <li><%= link_to_unless_current "Home", root_url %></li>
+        <li><%= link_to_unless_current "Users", users_url %></li>
+        <li><%= link_to_unless_current "Customers", customers_url %></li>
+        <li><%= link_to_unless_current "Projects", projects_url %></li>
+        <li><%= link_to_unless_current "Tasks", tasks_url %></li>
+        <li><%= link_to_unless_current "Contracts", contracts_url %></li>
+    </ul>
+    <div id="content"><%= yield %></div>
+</body>
+</html>

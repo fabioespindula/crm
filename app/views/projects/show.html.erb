@@ -1,0 +1,29 @@
+<p>
+  <b>Name:</b>
+  <%=h @project.name %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%=h @project.desc %>
+</p>
+
+<p>
+  <b>Customer:</b>
+  <%=h @project.customer %>
+</p>
+
+<% unless @project.members.empty? %>
+<p>
+    <b>Members:</b>
+    <ul>
+        <% @project.members.each do |member| %>
+        <li><%=h member.name %></li>
+        <% end %>
+    </ul>
+</p>
+<% end %>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
