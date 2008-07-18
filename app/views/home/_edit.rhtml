@@ -1,0 +1,36 @@
+<div class="edit" id="edit_form"> 
+  <h2>New Task</h2> 
+  <div class="part"> 
+    <%= error_messages_for :task %> 
+    <% form_remote_for(:task, :url => { :action => "save" }) do |f| %> 
+      <p> 
+        <b><%= f.label :title %></b><br /> 
+        <%= f.text_field :title, :size => 25 %> 
+      </p> 
+      <p> 
+        <b><%= f.label :description %></b><br /> 
+        <%= f.text_area :description, :cols => 25, :rows => 3 %> 
+      </p> 
+      <p> 
+        <b><%= f.label :priority %></b><br /> 
+        <%= f.select :priority, %w(normal low high) %> 
+      </p> 
+      <p> 
+        <b><%= f.label :progress %></b><br /> 
+        <%= f.select :progress, (0..100).collect{|i| ["#{i}%", i] }.to_a %> 
+      </p> 
+      <p> 
+        <b><%= f.label :started_at %></b><br />
+        <%= f.date_select :started_at, :order => [:day, :month, :year],
+        :include_blank => true %>
+      </p>
+      <p>
+        <b><%= f.label :project %></b><br />
+        <%= f.select :project_id, @projects, :prompt => "Select..." %>
+      </p>
+      <p>
+        <%= submit_tag "Save" %>
+      </p>
+    <% end %>
+  </div>
+</div>

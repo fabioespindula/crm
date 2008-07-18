@@ -1,13 +1,22 @@
 ActionController::Routing::Routes.draw do |map|
+  #map.resources :documents
+  
+  map.resources :sessions
+  
+  map.with_options(:controller => "sessions") do |sessions|
+    sessions.login "/login", :action => "new"
+    sessions.logout "/logout", :action => "destroy"
+  end
+
   map.resources :tasks
 
   map.resources :contracts
 
   map.resources :users
-
-  map.resources :projects
   
-  #map.resources :reports
+  map.resources :projects do |projects|
+    projects.resources :documents
+  end
 
   map.resources :customers
 

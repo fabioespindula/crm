@@ -1,0 +1,8 @@
+<% div_for project, :class => "group" do  %> 
+  <h2><%= project.name %></h2> 
+  <ul id="project_tasks_<%= project.id %>"> 
+    <% tasks.each do |task| %> 
+      <%= render :partial => "task", :locals => {:task => task} %> 
+    <% end %>
+  </ul>
+<% end %>

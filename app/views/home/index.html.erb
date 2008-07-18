@@ -1,1 +1,18 @@
-<img src="http://www.egenial.com.br/images_power/egenial.gif" border="0" />
+<h1>My Tasks</h1>
+<br />
+<div id="wrap">
+  <div id="projects">
+    <% @incomplete_tasks.group_by(&:project).each do |project, tasks| %> 
+      <%= render :partial => "project", :locals => { :project => project, :tasks => tasks } %>
+    <% end %>
+  </div>
+  <div class="group"> 
+    <h2>Completed Tasks</h2> 
+    <ul id="completed_tasks"> 
+      <% @completed_tasks.each do |task| %> 
+        <%= render :partial => "task", :locals => {:task => task} %> 
+      <% end %>
+    </ul>
+  </div>
+</div>
+<%= render :partial => "edit" %>

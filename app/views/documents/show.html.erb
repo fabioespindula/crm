@@ -1,0 +1,28 @@
+<p>
+  <b>Title:</b>
+  <%=h @document.title %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%=h @document.desc %>
+</p>
+
+<p>
+  <b>Download:</b>
+  <%= link_to "Download this document", @document.public_filename, :type => "#" %>
+</p>
+
+<p>
+  <b>Project:</b>
+  <%=h @document.project.name %>
+</p>
+
+<% if @document.content_type == "image/jpeg" %>
+<p>
+    <img src="<%= @document.public_filename %>" alt="<%=h @document.title %>" />
+</p>
+<% end %>
+
+<%= link_to 'Edit', edit_project_document_path(@project, @document) %> |
+<%= link_to 'Back', project_documents_path(@project) %>

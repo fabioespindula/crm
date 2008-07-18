@@ -24,6 +24,17 @@
 </p>
 <% end %>
 
+<% unless @project.documents.empty? %>
+<p>
+    <b>Documents:</b>
+    <ul>
+        <% @project.documents.each do |document| %>
+        <li><%= link_to document.title, document.public_filename %></li>
+        <% end %>
+    </ul>
+</p>
+<% end %>
+
 
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>

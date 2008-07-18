@@ -5,6 +5,7 @@
     <th>Name</th>
     <th>Desc</th>
     <th>Customer</th>
+    <th>Documents</th>
   </tr>
 
 <% for project in @projects %>
@@ -12,6 +13,7 @@
     <td><%=h project.name %></td>
     <td><%=h project.desc %></td>
     <td><%=h project.customer %></td>
+    <td><%= link_to "Documents", project_documents_path(project) %></td>
     <td><%= link_to 'Show', project %></td>
     <td><%= link_to 'Edit', edit_project_path(project) %></td>
     <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>

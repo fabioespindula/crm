@@ -13,12 +13,26 @@ class ApplicationController < ActionController::Base
   # from your application log (in this case, all fields with names like "password"). 
   # filter_parameter_logging :password
   
-  before_filter :configure_charsets
+  before_filter :authenticate
+  before_filter :set_current_user
+  helper_method :current_user
   
-  def configure_charsets
-    headers["Content-Type"] = "text/html; charset=utf-8"
-    suppress(ActiveRecord::StatementInvalid) do
-      ActiveRecord::Base.connection.execute 'SET NAMES UTF8'
+  
+  protected
+  
+  def set_current_user 
+    User.current_user_id = session[:user] 
+  end
+  
+  def current_user
+    @current_user ||= User.find(session[:user]) if session[:user]
+  end
+
+  def authenticate
+    unless session[:user]
+      session[:return_to] = request.request_uri
+      redirect_to login_path
     end
   end
+  
 end

@@ -1,0 +1,19 @@
+if @task.save 
+# Já existe uma div, então adiciona no topo a task recém-criada. 
+page << "if ($('project_#{@task.project.id}') != null) {" 
+page.insert_html :top, "project_tasks_#{@task.project.id}", :partial => "task"
+
+# Se não houver uma div para o projeto, cria uma e 
+# já joga a lista de tasks 
+page << "} else {" 
+tasks_list = current_user.tasks.find(:all, :conditions => {:status => 
+:open, :project_id => @task.project_id}) 
+page.insert_html :top, "projects", :partial => "project", :locals => { :project => @task.project, :tasks => tasks_list } page << "}"
+
+# Faz um efeitinho legal na última task adicionada 
+page.visual_effect :highlight, "task_#{@task.id}", :duration => 3.5 
+  @task = nil 
+end
+
+# Exibe o erro (ou zera) o edit 
+page.replace "edit_form", :partial => "edit"

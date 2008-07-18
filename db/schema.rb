@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20080630232433) do
+ActiveRecord::Schema.define(:version => 20080709194857) do
+
+  create_table "audit_entries", :force => true do |t|
+    t.integer  "user_id",    :limit => 11
+    t.string   "model_name"
+    t.string   "operation"
+    t.datetime "created_at"
+    t.text     "changes"
+    t.datetime "updated_at"
+  end
 
   create_table "contracts", :force => true do |t|
     t.string   "name",                     :null => false
@@ -34,6 +43,17 @@ ActiveRecord::Schema.define(:version => 20080630232433) do
     t.integer  "phone_country_code", :limit => 11
     t.integer  "phone_area_code",    :limit => 11
     t.string   "phone_number"
+  end
+
+  create_table "documents", :force => true do |t|
+    t.string   "title"
+    t.text     "desc"
+    t.string   "filename"
+    t.integer  "size",         :limit => 11
+    t.string   "content_type"
+    t.integer  "project_id",   :limit => 11
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "logs", :force => true do |t|
@@ -77,6 +97,7 @@ ActiveRecord::Schema.define(:version => 20080630232433) do
     t.string   "kind",                     :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
   end
 
 end

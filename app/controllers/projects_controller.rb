@@ -90,6 +90,5 @@ class ProjectsController < ApplicationController
   def load_customers_and_users
     @customers = Customer.find(:all).collect { |c| [c.name, c.id] }
     @users = User.find(:all, :order => "name")
-    
   end
 end

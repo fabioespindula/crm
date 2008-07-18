@@ -50,6 +50,10 @@ h1, ul, li, body, h2 {
     padding: 20px;
     float: left;
 }
+#wrap {
+    width: 520px;
+    float: left;
+}
 .welcome {
     color: #006600;
 }
@@ -83,4 +87,46 @@ th {
     padding-right: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+.group { 
+    border: 1px solid #006600; 
+    margin-bottom: 10px;
+    width: 510px;
+    float: left;
+}
+div.group h2 { 
+    padding: 5px; 
+    margin: 0px; 
+    border-bottom: 1px solid #006600; 
+    background-color: #90E17F; 
+    color: #006600;
+    font-size: 110%; 
+    width: 500px;
+} 
+div.group ul { 
+    list-style: none; 
+    margin: 0; 
+    padding: 0; 
+} 
+div.group ul li { 
+    margin: 8px 0px;
+}
+div.group { 
+    margin-right: 265px;
+} 
+.edit {
+    float: left; 
+    width: 250px;
+    border: 1px solid #006600;
+} 
+div.part { 
+    margin: 10px;
+} 
+div.edit h2 { 
+    padding: 5px; 
+    margin: 0px; 
+    border-bottom: 1px solid #006600; 
+    background-color: #90E17F; 
+    color: #006600; 
+    font-size: 110%; 
 }
