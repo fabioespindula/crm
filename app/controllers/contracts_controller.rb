@@ -1,5 +1,5 @@
 class ContractsController < ApplicationController
-  before_filter :load_fabio, :only => [:new, :create, :edit, :update]
+  before_filter :load_leaders_and_projects, :only => [:new, :create, :edit, :update]
   
   # GET /contracts
   # GET /contracts.xml
@@ -87,7 +87,7 @@ class ContractsController < ApplicationController
   
   protected
   
-  def load_fabio
+  def load_leaders_and_projects
     @leaders = User.find(:all).collect { |c| [c.name, c.id] }
     @projects = Project.find(:all).collect { |c| [c.name, c.id] }
   end
